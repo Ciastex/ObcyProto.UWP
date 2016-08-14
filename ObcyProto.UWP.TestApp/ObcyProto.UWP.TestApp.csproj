@@ -3,12 +3,12 @@
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8B864B2B-675D-4324-8892-3A2C02E1E020}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{FE3F837C-4C10-4F25-A8C8-72E34FE430D2}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ObcyProto.UWP</RootNamespace>
-    <AssemblyName>ObcyProto.UWP</AssemblyName>
+    <RootNamespace>ObcyProto.UWP.TestApp</RootNamespace>
+    <AssemblyName>ObcyProto.UWP.TestApp</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
@@ -16,28 +16,9 @@
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <PackageCertificateKeyFile>ObcyProto.UWP.TestApp_TemporaryKey.pfx</PackageCertificateKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x86\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
@@ -46,9 +27,9 @@
     <PlatformTarget>x86</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
-    <PlatformTarget>x86</PlatformTarget>
     <OutputPath>bin\x86\Release\</OutputPath>
     <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <Optimize>true</Optimize>
@@ -57,9 +38,10 @@
     <PlatformTarget>x86</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
-    <PlatformTarget>ARM</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\ARM\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
@@ -68,9 +50,9 @@
     <PlatformTarget>ARM</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
-    <PlatformTarget>ARM</PlatformTarget>
     <OutputPath>bin\ARM\Release\</OutputPath>
     <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <Optimize>true</Optimize>
@@ -79,9 +61,10 @@
     <PlatformTarget>ARM</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x64\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
@@ -90,9 +73,9 @@
     <PlatformTarget>x64</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <PlatformTarget>x64</PlatformTarget>
     <OutputPath>bin\x64\Release\</OutputPath>
     <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <Optimize>true</Optimize>
@@ -101,62 +84,53 @@
     <PlatformTarget>x64</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client\ChatState.cs" />
-    <Compile Include="Client\DisconnectInfo.cs" />
-    <Compile Include="Client\Identity\Location.cs" />
-    <Compile Include="Client\Identity\PersonInfo.cs" />
-    <Compile Include="Client\Identity\UserAgent.cs" />
-    <Compile Include="Client\Message.cs" />
-    <Compile Include="Client\MessageType.cs" />
-    <Compile Include="Client\Packets\ChatstatePacket.cs" />
-    <Compile Include="Client\Packets\ClientInfoPacket.cs" />
-    <Compile Include="Client\Packets\ConversationStartAcknowledgedPacket.cs" />
-    <Compile Include="Client\Packets\DisconnectStrangerPacket.cs" />
-    <Compile Include="Client\Packets\MessagePacket.cs" />
-    <Compile Include="Client\Packets\OpenAcknowledgedPacket.cs" />
-    <Compile Include="Client\Packets\PongPacket.cs" />
-    <Compile Include="Client\Packets\RandomTopicPacket.cs" />
-    <Compile Include="Client\Packets\ReportStrangerPacket.cs" />
-    <Compile Include="Client\Packets\StrangerSearchPacket.cs" />
-    <Compile Include="Client\StrangerInfo.cs" />
-    <Compile Include="Client\TestData.cs" />
-    <Compile Include="Connection.cs" />
-    <Compile Include="Events\ChatstateEventArgs.cs" />
-    <Compile Include="Events\ConnectionAcceptedEventArgs.cs" />
-    <Compile Include="Events\ConversationEndedEventArgs.cs" />
-    <Compile Include="Events\DisconnectEventArgs.cs" />
-    <Compile Include="Events\ErrorEventArgs.cs" />
-    <Compile Include="Events\HearbeatEventArgs.cs" />
-    <Compile Include="Events\JsonEventArgs.cs" />
-    <Compile Include="Events\MessageEventArgs.cs" />
-    <Compile Include="Events\OnlineCountEventArgs.cs" />
-    <Compile Include="Events\PingEventArgs.cs" />
-    <Compile Include="Events\StrangerFoundEventArgs.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Server\Packets\ConnectionAcceptedPacket.cs" />
-    <Compile Include="Server\Packets\ConversationEndedPacket.cs" />
-    <Compile Include="Server\Packets\MessageReceivedPacket.cs" />
-    <Compile Include="Server\Packets\OnlinePeopleCountPacket.cs" />
-    <Compile Include="Server\Packets\PingPacket.cs" />
-    <Compile Include="Server\Packets\RandomTopicReceivedPacket.cs" />
-    <Compile Include="Server\Packets\ServiceMessageReceivedPacket.cs" />
-    <Compile Include="Server\Packets\StrangerChatstatePacket.cs" />
-    <Compile Include="Server\Packets\StrangerDisconnectedPacket.cs" />
-    <Compile Include="Server\Packets\StrangerFoundPacket.cs" />
-    <Compile Include="SockJS\Packet.cs" />
-    <Compile Include="SockJS\PacketDecoder.cs" />
-    <Compile Include="SockJS\PacketDecoderExtensions.cs" />
-    <Compile Include="SockJS\PacketHandler.cs" />
-    <Compile Include="SockJS\PacketType.cs" />
-    <Compile Include="SockJS\SocketAddressGenerator.cs" />
-    <Compile Include="SockJS\SocketTargetAddress.cs" />
-    <EmbeddedResource Include="Properties\ObcyProto.UWP.rd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="ObcyProto.UWP.TestApp_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ObcyProto.UWP\ObcyProto.UWP.csproj">
+      <Project>{8b864b2b-675d-4324-8892-3a2c02e1e020}</Project>
+      <Name>ObcyProto.UWP</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
