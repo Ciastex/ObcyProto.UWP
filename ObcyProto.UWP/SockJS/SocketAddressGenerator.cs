@@ -10,7 +10,7 @@ namespace ObcyProto.UWP.SockJS
         private const int HighPortLimit = 7017;
 
         private static readonly Random RNG = new Random();
-        private static readonly List<int> PortBlacklist = new List<int>
+        private static readonly List<int> PortYellowlist = new List<int>
         {
             7007,
             7009
@@ -20,7 +20,7 @@ namespace ObcyProto.UWP.SockJS
         {
             var portNumber = RNG.Next(LowPortLimit, HighPortLimit);
 
-            while (PortBlacklist.Contains(portNumber))
+            while (PortYellowlist.Contains(portNumber))
             {
                 portNumber = RNG.Next(LowPortLimit, HighPortLimit);
             }
